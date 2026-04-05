@@ -1,0 +1,120 @@
+ticker,company,sector,sub_industry,index
+MMM,3M,Industrials,Industrial Conglomerates,SP500
+AOS,A. O. Smith,Industrials,Building Products,SP500
+ABT,Abbott Laboratories,Health Care,Health Care Equipment,SP500
+ABBV,AbbVie,Health Care,Biotechnology,SP500
+ACN,Accenture,Information Technology,IT Consulting & Other Services,SP500
+ADBE,Adobe Inc.,Information Technology,Application Software,BOTH
+AMD,Advanced Micro Devices,Information Technology,Semiconductors,BOTH
+AES,AES Corporation,Utilities,Independent Power Producers & Energy Traders,SP500
+AFL,Aflac,Financials,Life & Health Insurance,SP500
+A,Agilent Technologies,Health Care,Life Sciences Tools & Services,SP500
+APD,Air Products,Materials,Industrial Gases,SP500
+ABNB,Airbnb,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",BOTH
+AKAM,Akamai Technologies,Information Technology,Internet Services & Infrastructure,SP500
+ALB,Albemarle Corporation,Materials,Specialty Chemicals,SP500
+ARE,Alexandria Real Estate Equities,Real Estate,Office REITs,SP500
+ALGN,Align Technology,Health Care,Health Care Supplies,SP500
+ALLE,Allegion,Industrials,Building Products,SP500
+LNT,Alliant Energy,Utilities,Electric Utilities,SP500
+ALL,Allstate,Financials,Property & Casualty Insurance,SP500
+GOOGL,Alphabet Inc. (Class A),Communication Services,Interactive Media & Services,BOTH
+GOOG,Alphabet Inc. (Class C),Communication Services,Interactive Media & Services,BOTH
+MO,Altria,Consumer Staples,Tobacco,SP500
+AMZN,Amazon,Consumer Discretionary,Broadline Retail,BOTH
+AMCR,Amcor,Materials,Paper & Plastic Packaging Products & Materials,SP500
+AEE,Ameren,Utilities,Multi-Utilities,SP500
+AEP,American Electric Power,Utilities,Electric Utilities,BOTH
+AXP,American Express,Financials,Consumer Finance,SP500
+AIG,American International Group,Financials,Multi-line Insurance,SP500
+AMT,American Tower,Real Estate,Telecom Tower REITs,SP500
+AWK,American Water Works,Utilities,Water Utilities,SP500
+AMP,Ameriprise Financial,Financials,Asset Management & Custody Banks,SP500
+AME,Ametek,Industrials,Electrical Components & Equipment,SP500
+AMGN,Amgen,Health Care,Biotechnology,BOTH
+APH,Amphenol,Information Technology,Electronic Components,SP500
+ADI,Analog Devices,Information Technology,Semiconductors,BOTH
+AON,Aon plc,Financials,Insurance Brokers,SP500
+APA,APA Corporation,Energy,Oil & Gas Exploration & Production,SP500
+APO,Apollo Global Management,Financials,Asset Management & Custody Banks,SP500
+AAPL,Apple Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",BOTH
+AMAT,Applied Materials,Information Technology,Semiconductor Materials & Equipment,BOTH
+APP,AppLovin,Information Technology,Application Software,BOTH
+APTV,Aptiv,Consumer Discretionary,Automotive Parts & Equipment,SP500
+ACGL,Arch Capital Group,Financials,Property & Casualty Insurance,SP500
+ADM,Archer Daniels Midland,Consumer Staples,Agricultural Products & Services,SP500
+ARES,Ares Management,Financials,Asset Management & Custody Banks,SP500
+ANET,Arista Networks,Information Technology,Communications Equipment,SP500
+AJG,Arthur J. Gallagher & Co.,Financials,Insurance Brokers,SP500
+T,AT&T,Communication Services,Integrated Telecommunication Services,SP500
+ATO,Atmos Energy,Utilities,Gas Utilities,SP500
+ADP,Automatic Data Processing,Industrials,Human Resource & Employment Services,BOTH
+AZO,AutoZone,Consumer Discretionary,Automotive Retail,SP500
+AVB,AvalonBay Communities,Real Estate,Multi-Family Residential REITs,SP500
+AVY,Avery Dennison,Materials,Paper & Plastic Packaging Products & Materials,SP500
+AXON,Axon Enterprise,Industrials,Aerospace & Defense,BOTH
+BKR,Baker Hughes,Energy,Oil & Gas Equipment & Services,BOTH
+BALL,Ball Corporation,Materials,"Metal, Glass & Plastic Containers",SP500
+BAX,Baxter International,Health Care,Health Care Equipment,SP500
+BDX,Becton Dickinson,Health Care,Health Care Equipment,SP500
+BBY,Best Buy,Consumer Discretionary,Computer & Electronics Retail,SP500
+TECH,Bio-Techne,Health Care,Life Sciences Tools & Services,SP500
+BIIB,Biogen,Health Care,Biotechnology,SP500
+BA,Boeing,Industrials,Aerospace & Defense,SP500
+BKNG,Booking Holdings,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",BOTH
+BSX,Boston Scientific,Health Care,Health Care Equipment,SP500
+BR,Broadridge Financial Solutions,Industrials,Data Processing & Outsourced Services,SP500
+BF-B,Brown–Forman,Consumer Staples,Distillers & Vintners,SP500
+BLDR,Builders FirstSource,Industrials,Building Products,SP500
+BG,Bunge Global,Consumer Staples,Agricultural Products & Services,SP500
+BXP,"BXP, Inc.",Real Estate,Office REITs,SP500
+CHRW,C.H. Robinson,Industrials,Air Freight & Logistics,SP500
+CPT,Camden Property Trust,Real Estate,Multi-Family Residential REITs,SP500
+CPB,Campbell's Company (The),Consumer Staples,Packaged Foods & Meats,SP500
+CCL,Carnival,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",SP500
+CVNA,Carvana,Consumer Discretionary,Automotive Retail,SP500
+CBRE,CBRE Group,Real Estate,Real Estate Services,SP500
+CNP,CenterPoint Energy,Utilities,Multi-Utilities,SP500
+CF,CF Industries,Materials,Fertilizers & Agricultural Chemicals,SP500
+CHTR,Charter Communications,Communication Services,Cable & Satellite,BOTH
+CVX,Chevron Corporation,Energy,Integrated Oil & Gas,SP500
+CMG,Chipotle Mexican Grill,Consumer Discretionary,Restaurants,SP500
+CHD,Church & Dwight,Consumer Staples,Household Products,SP500
+CLX,Clorox,Consumer Staples,Household Products,SP500
+CMS,CMS Energy,Utilities,Multi-Utilities,SP500
+KO,Coca-Cola Company (The),Consumer Staples,Soft Drinks & Non-alcoholic Beverages,SP500
+CL,Colgate-Palmolive,Consumer Staples,Household Products,SP500
+CMCSA,Comcast,Communication Services,Cable & Satellite,BOTH
+CAG,Conagra Brands,Consumer Staples,Packaged Foods & Meats,SP500
+COP,ConocoPhillips,Energy,Oil & Gas Exploration & Production,SP500
+ED,Consolidated Edison,Utilities,Multi-Utilities,SP500
+CEG,Constellation Energy,Utilities,Electric Utilities,BOTH
+CTVA,Corteva,Materials,Fertilizers & Agricultural Chemicals,SP500
+CSGP,CoStar Group,Real Estate,Real Estate Services,BOTH
+CTRA,Coterra,Energy,Oil & Gas Exploration & Production,SP500
+CRH,CRH plc,Materials,Construction Materials,SP500
+CCI,Crown Castle,Real Estate,Telecom Tower REITs,SP500
+DRI,Darden Restaurants,Consumer Discretionary,Restaurants,SP500
+DVN,Devon Energy,Energy,Oil & Gas Exploration & Production,SP500
+FANG,Diamondback Energy,Energy,Oil & Gas Exploration & Production,BOTH
+DLR,Digital Realty,Real Estate,Data Center REITs,SP500
+DOW,Dow Inc.,Materials,Commodity Chemicals,SP500
+DD,DuPont,Materials,Specialty Chemicals,SP500
+EA,Electronic Arts,Communication Services,Interactive Home Entertainment,BOTH
+EOG,EOG Resources,Energy,Oil & Gas Exploration & Production,SP500
+EQT,EQT Corporation,Energy,Oil & Gas Exploration & Production,SP500
+EQIX,Equinix,Real Estate,Data Center REITs,SP500
+EXE,Expand Energy,Energy,Oil & Gas Exploration & Production,SP500
+FOXA,Fox Corporation (Class A),Communication Services,Broadcasting,SP500
+FOX,Fox Corporation (Class B),Communication Services,Broadcasting,SP500
+LYV,Live Nation Entertainment,Communication Services,Movies & Entertainment,SP500
+MTCH,Match Group,Communication Services,Interactive Media & Services,SP500
+ARM,Arm Holdings,Technology,,NASDAQ100
+ASML,ASML Holding,Technology,,NASDAQ100
+TEAM,Atlassian,Technology,,NASDAQ100
+MRVL,Marvell Technology,Technology,,NASDAQ100
+MSTR,MicroStrategy,Technology,,NASDAQ100
+PDD,PDD Holdings,Technology,,NASDAQ100
+SHOP,Shopify,Technology,,NASDAQ100
+TRI,Thomson Reuters,Technology,,NASDAQ100
+ZS,Zscaler,Technology,,NASDAQ100
