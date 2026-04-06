@@ -1,6 +1,6 @@
-# Data298A — Masters Project
+# Data298A — Project
 ## Debate-Based Multi-Agent Reasoning for Financial Risk Modeling
-Team 3 | DATA 298A — MSDA Project I | San Jose State University | Spring 2026
+Team 3 -  DATA 298A — MSDA Project I 
 
 **Team Members**
 - Harshitha Boinepally
