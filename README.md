@@ -1,6 +1,6 @@
-# Data298A — Masters Project
+# Data298A — Project
 ## Debate-Based Multi-Agent Reasoning for Financial Risk Modeling
-Team 3 | DATA 298A — MSDA Project I | San Jose State University | Spring 2026
+Team 3 -  DATA 298A — MSDA Project I 
 
 **Team Members**
 - Harshitha Boinepally
@@ -46,7 +46,6 @@ Data298A--Masters-Project/
 ## Requirements
 
 - Python 3.10 or higher
-- Mac, Linux, or Windows with terminal access
 - API keys for FRED and NewsAPI (Yahoo Finance and SEC EDGAR require no key)
 
 ---
@@ -65,7 +64,6 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-On Windows:
 ```bash
 venv\Scripts\activate
 ```
@@ -262,12 +260,4 @@ Risk labels: HIGH (above 6.0) · MODERATE (3.5 to 6.0) · LOW (below 3.5)
 
 ---
 
-## Notes
 
-- The `data/` folder is not tracked by Git due to file size. Download or regenerate
-  locally by running the pipeline steps above.
-- GCS upload is disabled by default. See `GCP_SETUP.md` for Google Cloud configuration.
-- Temporal train/val/test split will be applied once multi-date data collection
-  is complete. Current split is stratified by risk label.
-- The `macro_risk` score is computed from live FRED data (Fed Funds Rate + CPI).
-  If `silver_macro.csv` is not found, it defaults to 5.0.
