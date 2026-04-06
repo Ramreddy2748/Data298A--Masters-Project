@@ -21,6 +21,7 @@ final explainable risk classification.
 ---
 
 ## Repository Structure
+```text
 Data298A--Masters-Project/
 ├── ingest.py                  # Data collection — Yahoo Finance, SEC EDGAR, FRED, NewsAPI
 ├── clean.py                   # Data cleaning — Bronze to Silver layer
@@ -37,8 +38,10 @@ Data298A--Masters-Project/
 │   ├── gold/                  # Risk scores and splits (CSV)
 │   └── reports/               # Generated visualisation charts (PNG)
 └── GCP_SETUP.md               # Google Cloud setup instructions
+```
 
 ---
+
 
 ## Requirements
 
@@ -207,22 +210,24 @@ All pipeline settings are in `config.py`:
 ---
 
 ## Data Pipeline Architecture
+```text
 Raw APIs
-|
-v
+   |
+   v
 Bronze layer (data/bronze/)     -- raw data, no changes
-|
-v
+   |
+   v
 Silver layer (data/silver/)     -- cleaned, normalised, feature-engineered
-|
-v
+   |
+   v
 Gold layer (data/gold/)         -- risk scores, analytics-ready
-|
-v
+   |
+   v
 Train / Val / Test splits       -- stratified by risk label
-|
-v
-Model training and evaluation   
+   |
+   v
+Model training and evaluation   -- coming in Phase 2
+```  
 
 ---
 
