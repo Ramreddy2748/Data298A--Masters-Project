@@ -55,7 +55,7 @@ Data298A--Masters-Project/
 ### Step 1 — Clone the repository
 ```bash
 git clone https://github.com/Ramreddy2748/Data298A--Masters-Project.git
-cd Data298A--Masters-Project
+cd Data298A-Project
 ```
 
 ### Step 2 — Create and activate a virtual environment
@@ -80,8 +80,6 @@ Create a `.env` file in the project root:
 FRED_API_KEY=your_fred_api_key_here
 NEWS_API_KEY=your_newsapi_key_here
 
-Get a free FRED API key at: https://fred.stlouisfed.org/docs/api/api_key.html
-Get a free NewsAPI key at: https://newsapi.org/register
 
 Yahoo Finance and SEC EDGAR require no API key.
 
