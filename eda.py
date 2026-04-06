@@ -166,19 +166,16 @@ def compute_risk_scores(stats_df: pd.DataFrame, news_df: Optional[pd.DataFrame] 
     """
     Compute multi-dimensional risk scores (1–10 scale) per ticker.
     Dimensions mirror the 4 specialized agents:
-      - fundamental_risk  : P/E × beta × drawdown
+      - fundamental_risk  : P/E x beta x drawdown
       - volatility_risk   : annualized volatility, kurtosis
       - sentiment_risk    : VADER compound (from news_df)
-      - macro_risk        : placeholder — updated by Macro Agent
+      - macro_risk        : derived from FRED silver data
       - composite_risk    : weighted average
-
-    Returns:
-        DataFrame indexed by ticker with risk score columns.
     """
     log.info("[EDA] Computing risk scores...")
 
     def _scale(series: pd.Series, invert: bool = False) -> pd.Series:
-        """Scale series to 1–10."""
+        """Scale series to 1-10."""
         s_min, s_max = series.min(), series.max()
         if s_min == s_max:
             return pd.Series([5.0] * len(series), index=series.index)
@@ -190,26 +187,56 @@ def compute_risk_scores(stats_df: pd.DataFrame, news_df: Optional[pd.DataFrame] 
     # ── Volatility risk ───────────────────────────────────────────────────
     df["volatility_risk"] = _scale(df["ann_volatility_pct"])
 
-    # ── Fundamental risk (higher P/E + high beta + deeper drawdown = more risk)
-    pe_score  = _scale(df["pe_ratio"].fillna(df["pe_ratio"].median()))
-    beta_score= _scale(df["beta"].fillna(1.0))
-    dd_score  = _scale(df["max_drawdown_pct"].abs())
-    df["fundamental_risk"] = (pe_score * 0.4 + beta_score * 0.3 + dd_score * 0.3).clip(1, 10)
+    # ── Fundamental risk ──────────────────────────────────────────────────
+    pe_score   = _scale(df["pe_ratio"].fillna(df["pe_ratio"].median()))
+    beta_score = _scale(df["beta"].fillna(1.0))
+    dd_score   = _scale(df["max_drawdown_pct"].abs())
+    df["fundamental_risk"] = (
+        pe_score * 0.4 + beta_score * 0.3 + dd_score * 0.3
+    ).clip(1, 10)
 
-    # ── Sentiment risk (from daily VADER scores if available) ─────────────
+    # ── Sentiment risk ────────────────────────────────────────────────────
     if news_df is not None and not news_df.empty and "sentiment_mean" in news_df.columns:
-        sentiment_by_ticker = (
-            news_df.groupby("ticker")["sentiment_mean"].mean()
-        )
-        # Negative sentiment → higher risk; invert scale
+        sentiment_by_ticker = news_df.groupby("ticker")["sentiment_mean"].mean()
         df["sentiment_risk"] = _scale(
             df.index.map(sentiment_by_ticker).fillna(0), invert=True
         )
     else:
-        df["sentiment_risk"] = 5.0   # neutral when no news data
+        df["sentiment_risk"] = 5.0
 
-    # ── Macro risk (static placeholder — updated by Macro Agent at runtime) ─
-    df["macro_risk"] = 5.0
+    # ── Macro risk (derived from FRED silver data) ────────────────────────
+    try:
+        macro_path = os.path.join(config.LOCAL_SILVER, "silver_macro.csv")
+        if os.path.exists(macro_path):
+            macro_silver = pd.read_csv(macro_path, index_col=0, parse_dates=True)
+            latest = macro_silver.dropna(how="all").iloc[-1]
+
+            fed = float(latest.get("fed_funds_rate", 3.0))
+            fed_score = float(np.clip((fed / 6.0) * 10, 1, 10))
+
+            if "cpi" in macro_silver.columns:
+                cpi_series = macro_silver["cpi"].dropna()
+                cpi_z = abs(
+                    (cpi_series.iloc[-1] - cpi_series.mean()) /
+                    (cpi_series.std() + 1e-9)
+                )
+                cpi_score = float(np.clip(1 + cpi_z * 3, 1, 10))
+            else:
+                cpi_score = 5.0
+
+            macro_score = round((fed_score + cpi_score) / 2, 2)
+            df["macro_risk"] = macro_score
+            log.info(
+                f"  [Macro Risk] fed_funds={fed:.2f}% → {fed_score:.1f}, "
+                f"cpi_z={cpi_z:.2f} → {cpi_score:.1f}, "
+                f"macro_risk={macro_score}"
+            )
+        else:
+            log.warning("  silver_macro.csv not found — defaulting to 5.0")
+            df["macro_risk"] = 5.0
+    except Exception as e:
+        log.warning(f"  Macro risk computation failed ({e}) — defaulting to 5.0")
+        df["macro_risk"] = 5.0
 
     # ── Composite risk (weighted) ─────────────────────────────────────────
     df["composite_risk"] = (
@@ -221,10 +248,13 @@ def compute_risk_scores(stats_df: pd.DataFrame, news_df: Optional[pd.DataFrame] 
 
     df["risk_label"] = df["composite_risk"].apply(_risk_label)
 
-    risk_cols = ["fundamental_risk", "volatility_risk", "sentiment_risk", "macro_risk", "composite_risk", "risk_label"]
-    log.info(f"  ✔ Risk scores computed:\n{df[risk_cols].to_string()}")
+    risk_cols = [
+        "fundamental_risk", "volatility_risk",
+        "sentiment_risk", "macro_risk",
+        "composite_risk", "risk_label"
+    ]
+    log.info(f"  Risk scores computed:\n{df[risk_cols].to_string()}")
     return df
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 3 — VISUALIZATIONS
