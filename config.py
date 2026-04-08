@@ -51,7 +51,7 @@ FFILL_LIMIT             = 2      # Forward-fill up to N consecutive NaNs
 # ─── EDA SETTINGS ─────────────────────────────────────────────────────────────
 RISK_SCORE_LOW          = 3.5    # <= LOW risk
 RISK_SCORE_HIGH         = 6.0    # >  HIGH risk (between = MODERATE)
-PLOT_STYLE              = "seaborn-v0_8-whitegrid"
+PLOT_STYLE = "seaborn-whitegrid"
 FIGURE_DPI              = 150
 
 # ─── FRED MACRO SERIES ────────────────────────────────────────────────────────

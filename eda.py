@@ -35,7 +35,10 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s — %(message)s"
 )
 
-plt.style.use(config.PLOT_STYLE)
+try:
+    plt.style.use(config.PLOT_STYLE)
+except OSError:
+    plt.style.use("ggplot")
 
 # ─── Color palette ────────────────────────────────────────────────────────────
 PALETTE = {
